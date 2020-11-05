@@ -96,7 +96,7 @@ then
     echo "load generator errors found: $(kubectl logs -l app=loadgenerator -c main)"
     exit 1
   fi
-  analyze_istio_config "$APPL_NS"
+  if [[ "$WITH_ISTIO" == *'true'* ]] ; then analyze_istio_config "$APPL_NS" ; fi
 fi
 
 if [[ "$APPL_DELETE" == *'true'* ]]
