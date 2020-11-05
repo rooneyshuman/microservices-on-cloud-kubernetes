@@ -16,6 +16,7 @@ env:
   APPL_DEPLOY: true
   APPL_DELETE: false
   GKE_DELETE: false
+  WITH_ISTIO: false
 
 jobs:
   deploy-online-boutique:
@@ -35,6 +36,7 @@ jobs:
         echo "appl deploy: $APPL_DEPLOY"
         echo "appl delete: $APPL_DELETE"
         echo "gke delete: $GKE_DELETE"
+        echo "with istio: $WITH_ISTIO"
         
     - name: Checkout
       uses: actions/checkout@v2
